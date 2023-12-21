@@ -27,7 +27,7 @@ h2 {
 /* Styles des liens */
 a {
     text-decoration: none;
-    color: #0066cc; /* Couleur des liens */
+    color: rgb(255, 255, 255); /* Couleur des liens */
 }
 
 /**************************** NAVBAR ****************************/
@@ -36,8 +36,8 @@ a {
 nav {
     overflow: hidden;
     background-color: #333; /* Couleur de fond de la barre de navigation */
-    position: fixed;
-    opacity: 0.9;
+    position:relative;
+    opacity: 1;
     width: 100%;
 }
 
@@ -78,20 +78,20 @@ header li a {
 h1 {
     font-family: 'Dancing Script', cursive;
     text-align: center;
-    color: #a09f9c; /* Couleur du titre principal */
+    color: #ffffff; /* Couleur du titre principal */
     font-size: 6em;
     margin-top: 110px;
 }
 
 /* Styles des boutons */
-button {
+.button {
     display: inline-block;
-    background-color: rgb(118, 130, 163); /* Couleur du bouton */
-    border-radius: 10px;
-    color: #333; /* Couleur du texte du bouton */
+    background-color: #333; /* Couleur du bouton */
+    border-radius: 15px;
+    color: rgb(255, 255, 255); /* Couleur du texte du bouton */
     text-align: center;
-    font-size: 28px;
-    padding: 10px; /* Espacement interne du bouton */
+    font-size: 23px;
+    padding: 16px; /* Espacement interne du bouton */
     width: 200px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -101,6 +101,12 @@ button {
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 30px; /* Espacement externe du bouton */
+    font-family: 'Advent Pro', sans-serif;
+}
+
+.button:hover{
+    background-color: #acacac;
+    transform: scale(1.2);
 }
 
 /* Styles des images de description */
@@ -114,7 +120,33 @@ button {
     overflow: hidden;
 }
 
+/* Styles du texte dans la description */
+#Description_IMT_Atlantique p,
+#Description-Ecole-Wushu p {
+    font-family: 'Noto Sans', sans-serif; /* Changer la police */
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444; /* Couleur du texte */
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+#Description_IMT_Atlantique h2,
+#Description-Ecole-Wushu h2 {
+    font-family: 'Dancing Script', cursive; /* Changer la police */
+
+    color: #555; /* Couleur du titre */
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
 /**************************** EQUIPES ****************************/
+
+
+/* Styles de la section des équipes*/
+#Equipe12,#Equipe13{
+    margin: 40px;
+}
 
 /* Styles du conteneur d'équipes */
 .team-container {
@@ -170,10 +202,12 @@ button {
 .member-last-name{
     margin: 0;
     color: #000;
+    font-family: 'Noto Sans', sans-serif;
 }
 .member-role {
     margin: 0;
-    color: #6532a8; /* Couleur des noms et rôles */
+    color: #6532a8;
+    font-weight: bold; /* Couleur des noms et rôles */
 }
 
 /* Ajout de styles pour les titres dans la description-member */
@@ -182,11 +216,13 @@ button {
     font-size: 1.5em;
     margin-bottom: 15px;
 }
+
+/**************************** VIDEOS ****************************/
+
 /* Styles pour la section des vidéos */
 .video-container {
     margin: 20px;
     padding: 20px;
-    border: 2px solid #ccc;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -199,7 +235,7 @@ button {
 /* Styles pour les vidéos elles-mêmes */
 .video-container video {
     width: 100%; /* La vidéo occupe 100% de la largeur du conteneur */
-    height: auto; /* La hauteur s'ajuste automatiquement pour maintenir les proportions */
+    height: 700px; /* La hauteur s'ajuste automatiquement pour maintenir les proportions */
     border-radius: 8px;
     outline: none; /* Empêche la bordure par défaut de la balise video */
 }
@@ -209,3 +245,100 @@ button {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.container{
+    width: 735px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 25px 0px 25px;
+}
+
+.container video {
+    transition: transform 0.3s ease;
+  }
+  
+  .container video:hover {
+    transform: scale(1.05);
+  }
+
+.row-container{
+    display: flex;
+    flex-direction: row;
+    margin : 50px 0px 50px 0px;
+    justify-content: center;
+}
+
+.button-video {
+    display: inline-block;
+    background-color: #bebdbd; /* Couleur du bouton */
+    border-radius: 15px;
+    color: rgb(255, 255, 255); /* Couleur du texte du bouton */
+    text-align: center;
+    font-size: 15px;
+    padding: 16px; /* Espacement interne du bouton */
+    width: 200px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    font-family: 'Advent Pro', sans-serif;
+    margin: 35px;
+}
+
+.button-video:hover{
+    background-color: #979797;
+    transform: scale(1.2);
+}
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+/**************************** ELEMENTS PAGE GROUPE 12 ****************************/
+
+.titre-groupe-12{
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    color: #333; /* Couleur du titre principal */
+    font-size: 6em;
+    margin-top: 110px;
+}
+#description-groupe-12{
+    margin: 0px 80px 0px 80px;
+}
+#description-groupe-12 p {
+    font-size: 18px;
+}
+.navigation{
+    margin: 30px 0px 0px 0px; 
+}
+.navigation-function{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+h3{
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 2.5em;
+    color: #555; /* Couleur du titre */
+}
+
+
+
+h3{
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 2.5em;
+    color: #555; /* Couleur du titre */
+}

@@ -73,7 +73,7 @@
         }
 
         .nav-button {
-            background-color: #d2b48c;
+            background-color: #68553d;
             color: #fff;
             padding: 10px 20px;
             border: none;
@@ -112,15 +112,11 @@
         .image-container {
             margin: 0 10px;
             text-align: center;
-            height: 300px; /* Set a fixed height for the image container */
-            display: flex;
-            flex-direction: column;
-    }
+        }
 
         .image-container img {
             max-width: 100%;
-            max-height: 100%; /* Make sure the image doesn't exceed the container height */
-            object-fit: cover; /* Scale the image to cover the container */
+            height: auto;
         }
 
         .button-container {
@@ -129,11 +125,26 @@
         .right-margin {
             margin-right: 30px;
         }
-        .image-title {
-            color: #1f1d1d;
-            margin-top: 30px;
-            font-weight: bold;
-        }
+        .viewpoint-button {
+        background-color: #6495ED; /* Bleu */
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .analysis-button {
+        background-color: #8FBC8F; /* Vert olive */
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+    
 
     </style>
 </head>
@@ -160,28 +171,24 @@
     </header>
 
     <main>
-        <!-- Section pour le Mouvement 1 -->
-        <section id="imageSection" class="image-section">
-            <div class="image-container">
-                <div class="image-title">Vidéo 1</div>
-
-                <img src="media/taichi3.jpg" alt="Image 1">
-
-                <div class="button-container">
-                    <button class="nav-button" onclick="window.location.href = '11A.html'">Regarder avec analyse</button>
-                    <button class="other-button" onclick="window.location.href = '11.html'">Regarder sans analyse</button>
+        
+            <div class="video-container">
+                <h2 id="videoTitle">Mouvement 2 / Vidéo 2</h2>
+                <div class="video-info">
+                    <p>Ensuite il faut aussi faire attention à l’inclinaison de son corps. Au Tui Shou il est important de garder le corps le plus à la verticale possible, notamment au niveau du dos. Cette seconde vidéo analyse met donc en évidence ce problème avec 2 mauvaises réalisations à la fin. Il y a cependant un souci avec cette analyse, nous ne sommes pas parvenus à bien différencier les bonnes des mauvaises réalisations dans tous les cas.</p>
+                </div>
+                <video id="videoPlayer" controls>
+                    <source src="media/videos/22Front.mp4" type="video/mp4">
+                </video>
+                <div class="navigation">
+                    <button class="nav-button" onclick=" window.location.href = '21.html'">Précédent</button>
+                    <button class="analysis-button" onclick="window.location.href = '22A.html'">Afficher / Cacher analyse</button>
+                    <button class="viewpoint-button" onclick="changeViewpoint()">vue de dessus</button>
+                    <button class="viewpoint-button" onclick="changeViewpoint1()">vue de face</button>
+                    <button class="nav-button" id="suivantButton" onclick="">Suivant</button>
+                    
                 </div>
             </div>
-            <div class="image-container">
-                <div class="image-title">Vidéo 2</div>
-
-                <img src="media/Tai Chi.jpeg" alt="Image 2">
-                <div class="button-container">
-                    <button class="nav-button" onclick="window.location.href = '12A.html'">Regarder avec analyse</button>
-                    <button class="other-button" onclick="window.location.href = '12.html'">Regarder sans analyse</button>
-                </div>
-            </div>
-            
         </section>
 
     
@@ -190,6 +197,33 @@
     <footer>
     </footer>
 
-    
+    <script>
+        
+        function changeViewpoint(){
+            var videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.src = "media/videos/22Up.mp4";
+            videoPlayer.load();
+        }
+        function changeViewpoint1(){
+            var videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.src = "media/videos/22Front.mp4";
+            videoPlayer.load();
+        }
+        function disableSuivantButton() {
+        var suivantButton = document.getElementById('suivantButton');
+        suivantButton.disabled = true;
+        suivantButton.style.opacity = 0.5; // Optional: reduce opacity to visually indicate it's disabled
+    }
+
+        // Enable "Suivant" button
+        function enableSuivantButton() {
+            var suivantButton = document.getElementById('suivantButton');
+            suivantButton.disabled = false;
+            suivantButton.style.opacity = 1; // Optional: reset opacity
+        }
+
+        // Call disableSuivantButton() to disable the button initially or based on your conditions
+        disableSuivantButton();
+    </script>
 </body>
 </html>
